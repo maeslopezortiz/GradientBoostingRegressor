@@ -1,14 +1,10 @@
-
+#!/usr/bin/Rscript
 library(ggplot2)
 library(hrbrthemes)
 library(dplyr)
 library(forcats)
 library(RColorBrewer)
 library(rcartocolor)
-# Function to create a plot
-
-
-
 
 # Function to create a plot
 createPlot <- function(data, plot_type, species_name) {
@@ -34,7 +30,7 @@ createPlot <- function(data, plot_type, species_name) {
   print(p+labs(fill = "estimators"))
   
   # Save the plot to a PDF with the species name in the filename
-  pdf_file <- sprintf("/Users/mariaestefania/Documents/ETH/python/euler/GBR_results/%s_Plot_%s.pdf", plot_type, species_name)
+  pdf_file <- sprintf("~/GBR_results/%s_Plot_%s.pdf", plot_type, species_name)
   pdf(file = pdf_file, width = 10, height = 20)
   print(p+labs(fill = "estimators"))
   dev.off()
@@ -46,11 +42,8 @@ FILES <- list.files()
 FILES
 
 # Read species names from a text file (assuming the species names are in one column)
-SPECIES <- read.table('/Users/mariaestefania/Documents/ETH/python/euler/scripts/species.txt', header = FALSE, stringsAsFactors = FALSE)
+SPECIES <- read.table('/~/species.txt', header = FALSE, stringsAsFactors = FALSE)
 list_species <- SPECIES$V1  # Use the column name to extract the species names
-
-
-
 
 for (i in list_species) {
   i <- trimws(i)
