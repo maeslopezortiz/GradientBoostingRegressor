@@ -27,7 +27,7 @@ print('Fold: ', FOLD)
 
 # Load data using an external script (LoadEasyGeSe.py)
 
-with open("/cluster/scratch/malopez/GenoPredict/EasyGeSe/LoadEasyGeSe.py") as f:
+with open("~/GenoPredict/EasyGeSe/LoadEasyGeSe.py") as f:
     exec(f.read())# Execute the script to load data
 
 X, Y = LoadEasyGeSeData(SPECIES)
@@ -45,7 +45,7 @@ X = Xdf.to_numpy()
 print(Y.shape)
 print(X.shape)
 
-output_directory = "/cluster/scratch/malopez/GenoPredict/GBR_results/"
+output_directory = "/~/GenoPredict/GBR_results/"
 filename = f"{output_directory}GenPred_estimators_{SPECIES}{TRAIT}{CV}{FOLD}.csv"
 
 resfile = open(filename,"w")
