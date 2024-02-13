@@ -31,8 +31,8 @@ with open("~/GenoPredict/EasyGeSe/LoadEasyGeSe.py") as f:
     exec(f.read())# Execute the script to load data
 
 X, Y = LoadEasyGeSeData(SPECIES)
-Ydf = pd.DataFrame (Y [1:], columns = Y [0])
-Xdf = pd.DataFrame(X [1:], columns = X [0])
+Ydf = pd.DataFrame (Y)
+Xdf = pd.DataFrame(X)
 # Handle missing values in both DataFrames
 Ydf.replace("NA", np.nan, inplace=True)
 Ydf = Ydf.dropna()
