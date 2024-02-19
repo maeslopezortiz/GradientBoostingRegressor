@@ -136,7 +136,40 @@ Let's run and fit the model!
 ```sh
 reg = GradientBoostingRegressor(random_state=0, n_estimators=1000)
 reg.fit(x_train,y_train)
+
+#GradientBoostingRegressor(alpha=0.9, criterion='friedman_mse', init=None,
+                          learning_rate=0.1, loss='ls', max_depth=3,
+                          max_features=None, max_leaf_nodes=None,
+                          min_impurity_decrease=0.0, min_impurity_split=None,
+                          min_samples_leaf=1, min_samples_split=2,
+                          min_weight_fraction_leaf=0.0, n_estimators=1000,
+                          n_iter_no_change=None, presort='auto', random_state=0,
+                          subsample=1.0, tol=0.0001, validation_fraction=0.1,
+                          verbose=0, warm_start=False)
 ```
 
+Calculate the prediction values:
+```sh
+y_pred = reg.predict(x_test)
+```
+To evaluate the performance of our model, we calculate the coefficient correlation value and root mean squared error.
 
-
+```sh
+cor1 = np.corrcoef(y_test,y_pred)[0,1]
+rmse1 = sqrt(mean_squared_error(y_test,y_pred))
+print('correlation coefficient:', cor1)
+#correlation coefficient: 0.7906774082910858
+print('root squared error:', rmse1)
+#root squared error: 2.1584768670835155
+```
+Give a feature importance of the markers used by the model to predict:
+```sh
+feature_importance = reg.feature_importances_
+sorted_idx = np.argsort(feature_importance)
+onlyimportantlogic = feature_importance > 0
+onlyimportant = feature_importance[onlyimportantlogic]
+p0 = sorted_idx[onlyimportantlogic]
+usefulmarkers = p0.shape[0]
+print(usefulmarkers)
+#2273
+```
