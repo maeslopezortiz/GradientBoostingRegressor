@@ -35,7 +35,7 @@ You can run the Python script as:
 #python script.py species_name trait_column cross-fold-validation
 python  GBR_na.py 'lentil' 1 1 1 
 ```
-Let's look how the script works:
+Let's look how the script works in Python:
 
 ```sh
 #!/usr/bin/env python3
@@ -50,3 +50,41 @@ import sys
 import pandas as pd
 from math import sqrt
 ```
+
+```sh
+SPECIES = 'lentil'#sys.argv[1]
+TRAIT = 1#int(sys.argv[2])
+CV = 1#int(sys.argv[3])
+FOLD = 1#int(sys.argv[4])
+```
+Display input parameters.
+
+```sh
+print("Species: ", SPECIES)
+print('Trait: ', TRAIT)
+print('Cross validation: ', CV)
+print('Fold: ', FOLD)
+```
+```sh
+#Species:  lentil
+#Trait:  1
+#Cross validation:  1
+#Fold:  1
+```
+
+Load data using an external script (LoadEasyGeSe.py):
+```sh
+with open("/cluster/scratch/malopez/GenoPredict/EasyGeSe/LoadEasyGeSe.py") as f:
+    exec(f.read())
+X, Y = LoadEasyGeSeData(SPECIES)
+```
+Loading data base information:
+```sh
+Loaded 324 genotypes
+Loaded 6 phenotyes
+Loaded 23591 markers
+Please cite:
+Haile, Teketel A., et al. 'Genomic selection for lentil breeding: Empirical evidence.' The Plant Genome 13.1 (2020): e20002.
+```
+
+
