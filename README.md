@@ -176,7 +176,7 @@ print(usefulmarkers)
 ## Adding More Estimators? 
 To improve the predictions values, we are going to evaluate the modification of hyperparameters such as number of estimator and the number of markers.
 > _As more estimators are added, the predictions of the models are combined to create a final and more accurate prediction._
-> **NOTE:** Overfitting Consideration.
+> **NOTE:** You have to consider an overfitting model. 
 
 
 
