@@ -176,9 +176,35 @@ print(usefulmarkers)
 ## Adding More Estimators? 
 To improve the predictions values, we are going to evaluate the modification of hyperparameters such as number of estimator and the number of markers.
 > _As more estimators are added, the predictions of the models are combined to create a final and more accurate prediction._
-> **NOTE:** You have to consider an overfitting model. 
+> **NOTE:** You have to consider thar this parameter can generate an overfitting model. 
+```sh
+result1= [SPECIES,TRAIT,CV, FOLD,cor1, rmse1, markers1, usefulmarkers, 1000]
+all_results.append( result1 )
+markers = [50,100, 200, 300, 400, 500, 1000, 2000]
+```
 
-
+Runing in a loop.
+```sh
+for i in markers:
+    new_markers = p0[-i:]
+    new_markers = new_markers.astype(int)  # Convert new_markers to an array of integers
+    x_train_new = x_train[:, new_markers].astype('float64')
+    x_test_new = x_test[:, new_markers].astype('float64')
+    reg_new = GradientBoostingRegressor(random_state=0, n_estimators=int(i/2))  # Convert i/2 to an integer
+    reg_new.fit(x_train_new, y_train)
+    y_pred_new = reg_new.predict(x_test_new)
+    cor = np.corrcoef(y_test, y_pred_new)[0, 1]
+    rmse = mean_squared_error(y_test, y_pred_new)
+    feature_importance_new = reg_new.feature_importances_
+    sorted_idx_new = np.argsort(feature_importance_new)
+    onlyimportantlogic_new = feature_importance_new > 0
+    onlyimportant_new = feature_importance_new[onlyimportantlogic_new]
+    usefulmarkers_new = onlyimportant_new.shape[0]
+    result = [SPECIES, TRAIT, CV, FOLD, cor, rmse, i, usefulmarkers_new, int(i/2)]  # Convert i/2 to an integer
+    all_results.append(result)
+```
+# write many rows with results (using `writerows` with `s` at the end)
+csv_writer.writerows(all_results)
 
 
 
