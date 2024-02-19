@@ -202,9 +202,9 @@ for i in markers:
     usefulmarkers_new = onlyimportant_new.shape[0]
     result = [SPECIES, TRAIT, CV, FOLD, cor, rmse, i, usefulmarkers_new, int(i/2)]  # Convert i/2 to an integer
     all_results.append(result)
-```
-# write many rows with results (using `writerows` with `s` at the end)
 csv_writer.writerows(all_results)
+resfile.close()
+```
 
 
 
