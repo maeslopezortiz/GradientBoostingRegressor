@@ -132,7 +132,11 @@ print(x_train.shape)
 print(x_test.shape)
 #(63, 23590)
 ```
-
+Let's run and fit the model!
+```sh
+reg = GradientBoostingRegressor(random_state=0, n_estimators=1000)
+reg.fit(x_train,y_train)
+```
 
 
 
