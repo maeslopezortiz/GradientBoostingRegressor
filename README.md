@@ -175,15 +175,15 @@ print(usefulmarkers)
 ```
 ## Adding More Estimators? 
 To improve the predictions values, we are going to evaluate the modification of hyperparameters such as number of estimator and the number of markers.
-> _As more estimators are added, the predictions of the models are combined to create a final and more accurate prediction._
-> **NOTE:** You have to consider thar this parameter can generate an overfitting model. 
+_As more estimators are added, the predictions of the models are combined to create a final and more accurate prediction._
+> **NOTE:** You have to consider that this parameter can generate an overfitting model. 
 ```sh
 result1= [SPECIES,TRAIT,CV, FOLD,cor1, rmse1, markers1, usefulmarkers, 1000]
 all_results.append( result1 )
 markers = [50,100, 200, 300, 400, 500, 1000, 2000]
 ```
 
-Runing in a loop.
+Runing in a loop and saving results in a csv file.
 ```sh
 for i in markers:
     new_markers = p0[-i:]
