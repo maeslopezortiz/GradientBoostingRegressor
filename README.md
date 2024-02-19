@@ -74,11 +74,11 @@ print('Fold: ', FOLD)
 
 Load data using an external script (LoadEasyGeSe.py):
 ```sh
-with open("/cluster/scratch/malopez/GenoPredict/EasyGeSe/LoadEasyGeSe.py") as f:
-    exec(f.read())
+with open("/~/GenoPredict/EasyGeSe/LoadEasyGeSe.py") as f:
+    exec(f.read()) #Add the path of working directory
 X, Y = LoadEasyGeSeData(SPECIES)
 ```
-Loading data base information:
+Loading 'lentil' database information:
 ```sh
 Loaded 324 genotypes
 Loaded 6 phenotyes
@@ -86,5 +86,20 @@ Loaded 23591 markers
 Please cite:
 Haile, Teketel A., et al. 'Genomic selection for lentil breeding: Empirical evidence.' The Plant Genome 13.1 (2020): e20002.
 ```
-
+It is important to handel missing values in both arrays or DataFrames to avoid future errors:
+```sh
+Ydf = pd.DataFrame (Y)
+Xdf = pd.DataFrame(X)
+Ydf.replace("NA", np.nan, inplace=True)
+Ydf = Ydf.dropna()
+Xdf = Xdf.loc[Ydf.index]
+```
+```sh
+Y = Ydf.to_numpy()
+X = Xdf.to_numpy()
+print(Y.shape)
+#(324, 6)
+print(X.shape)
+#(324, 23591)
+```
 
