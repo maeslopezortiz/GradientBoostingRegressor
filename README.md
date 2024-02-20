@@ -229,8 +229,5 @@ lentil,1,1,1,0.780212475892097,4.7550658984462775,2000,1302,1000
 ## R plot
 >Plot using the plot_estimators.R in R
 
-Plot of correlation coefficient in the 20 cross-fold-validation for all traits of the 'lentil' dataset.
-![](https://github.com/maeslopezortiz/GradientBoostingRegressor/blob/main/cor_Plot_lentil.png)
-
-Plot of root mean squared error in the 20 cross-fold-validation for all traits of the 'lentil' dataset.
-![](https://github.com/maeslopezortiz/GradientBoostingRegressor/blob/main/rmse_Plot_lentil.png)
+Plot of with the 20 cross-fold-validation for all traits of the 'lentil' dataset.
+![](https://github.com/maeslopezortiz/GradientBoostingRegressor/blob/main/plots_lentil.png)
