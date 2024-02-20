@@ -222,7 +222,8 @@ ls
 #GenPred_estimators_lentil111.csv
 cat GenPred_estimators_lentil111.csv
 ```
-Inside **GenPred_estimators_lentil111.csv** file
+Inside **GenPred_estimators_lentil111.csv** file.
+
 ```sh
 SPECIES,TRAIT,CV,FOLD,cor,rmse,markers,usefulmarkers,estimators
 lentil,1,1,1,0.7906774082910858,2.1584768670835155,23590,2273,1000
