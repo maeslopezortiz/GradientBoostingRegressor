@@ -2,6 +2,7 @@
 ## _For genomic predictions_
 
 >In this project, we aim to enhance the predictive performance of a [GradientBoostingRegression](https://github.com/scikit-learn/scikit-learn/) model for genomic predictions using the [EasyGeSe](https://github.com/stevenandrewyates/EasyGeSe/) database. EasyGeSe is a comprehensive genomic dataset that provides valuable insights into genetic variations and their associations with various phenotypic traits (Quesada _et al_., 2024).
+
 ## Features
 
 Selecting the parameters which are applied to increase the prediction accuracy.
@@ -14,23 +15,26 @@ Selecting the parameters which are applied to increase the prediction accuracy.
 | Testing no. estimators: | all, 2000, 1000, 500, 400, 300, 200, 100, 50. |
 | Testing no. markers: | 1000, 500, 250, 200, 150, 100, 50, 25. |
 
-
 ## Download _EasyGeSe_
+
 Download the EasyGeSe folder in your working directory:
 ```sh
 git clone https://github.com/stevenandrewyates/EasyGeSe
 mkdir GBR_results #create output directoty for results
 ```
-## Working in Python
-When you are working in an Institute cluster or supercomputer  e.g. "euler" at the ETHZ, you need to be awared that you have dowloaded the last Python version and loaded it.
 
+## Working in Python
+
+When you are working in an Institute cluster or supercomputer  e.g. "euler" at the ETHZ, you need to be awared that you have dowloaded the last Python version and loaded it.
 ```sh
 module load python/3.7.4
 python
 ```
 ## Example
+
 This example can be done using the scriot bellow, to get coefficient correlation values and mean squared error from the data base 'lentil'.
 You can run the Python script as:
+
 ```sh
 #python script.py species_name trait_column cross-fold-validation
 python  GBR_na.py 'lentil' 1 1 1 
@@ -174,6 +178,7 @@ print(usefulmarkers)
 #2273
 ```
 ## Adding More Estimators? 
+
 To improve the predictions values, we are going to evaluate the modification of hyperparameters such as number of estimator and the number of markers.
 _As more estimators are added, the predictions of the models are combined to create a final and more accurate prediction._
 > **NOTE:** You have to consider that this parameter can generate an overfitting model. 
@@ -206,6 +211,7 @@ csv_writer.writerows(all_results)
 resfile.close()
 ```
 ## Results 
+
 By now we got a csv file in GBR_results output directory in our terminal.
 ```sh
 cd GBR_results
@@ -227,7 +233,9 @@ lentil,1,1,1,0.779339497344807,4.801462582601394,1000,688,500
 lentil,1,1,1,0.780212475892097,4.7550658984462775,2000,1302,1000
 ```
 ## R plot
+
 >Plot using the plot_estimators.R in R
+
 
 Plot of with the 20 cross-fold-validation for all traits of the 'lentil' dataset.
 ![](https://github.com/maeslopezortiz/GradientBoostingRegressor/blob/main/plots_lentil.png)
