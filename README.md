@@ -216,7 +216,7 @@ cat GenPred_estimators_lentil111.csv
 Inside **GenPred_estimators_lentil111.csv** file
 ```sh
 SPECIES,TRAIT,CV,FOLD,cor,rmse,markers,usefulmarkers,estimators
-lentil,1,1,1,0.7906774082910858,4.6590223857346675,23590,2273,1000
+lentil,1,1,1,0.7906774082910858,2.1584768670835155,23590,2273,1000
 lentil,1,1,1,0.735192119502446,5.494681379013553,50,41,25
 lentil,1,1,1,0.7946870737773924,4.3334386081124086,100,83,50
 lentil,1,1,1,0.7891147899327088,4.645291985131125,200,160,100
@@ -225,7 +225,12 @@ lentil,1,1,1,0.781889990290914,4.828922805362387,400,308,200
 lentil,1,1,1,0.7787253174159432,4.723335496863951,500,372,250
 lentil,1,1,1,0.779339497344807,4.801462582601394,1000,688,500
 lentil,1,1,1,0.780212475892097,4.7550658984462775,2000,1302,1000
-```sh
+```
+## R plot
+>Plot using the plot_estimators.R in R
 
+Plot of correlation coefficient in the 20 cross-fold-validation for all traits of the 'lentil' dataset.
+![](https://github.com/maeslopezortiz/GradientBoostingRegressor/blob/main/cor_Plot_lentil.pdf)
 
-
+Plot of root mean squared error in the 20 cross-fold-validation for all traits of the 'lentil' dataset.
+![](https://github.com/maeslopezortiz/GradientBoostingRegressor/blob/main/rmse_Plot_lentil.pdf)
