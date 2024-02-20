@@ -22,7 +22,7 @@ git clone https://github.com/stevenandrewyates/EasyGeSe
 mkdir GBR_results #create output directoty for results
 ```
 ## Working in Python
-When you are working in an Institute cluster or supercomputer  e.g. "euler" at the ETHZ, you need to be awared that you have dowloaded the last Python version and loaded.
+When you are working in an Institute cluster or supercomputer  e.g. "euler" at the ETHZ, you need to be awared that you have dowloaded the last Python version and loaded it.
 
 ```sh
 module load python/3.7.4
@@ -205,7 +205,27 @@ for i in markers:
 csv_writer.writerows(all_results)
 resfile.close()
 ```
-
+## Results 
+By now we got a csv file in GBR_results output directory in our terminal.
+```sh
+cd GBR_results
+ls
+#GenPred_estimators_lentil111.csv
+cat GenPred_estimators_lentil111.csv
+```
+Inside **GenPred_estimators_lentil111.csv** file
+```sh
+SPECIES,TRAIT,CV,FOLD,cor,rmse,markers,usefulmarkers,estimators
+lentil,1,1,1,0.7906774082910858,4.6590223857346675,23590,2273,1000
+lentil,1,1,1,0.735192119502446,5.494681379013553,50,41,25
+lentil,1,1,1,0.7946870737773924,4.3334386081124086,100,83,50
+lentil,1,1,1,0.7891147899327088,4.645291985131125,200,160,100
+lentil,1,1,1,0.7864034439829078,4.773130421945425,300,236,150
+lentil,1,1,1,0.781889990290914,4.828922805362387,400,308,200
+lentil,1,1,1,0.7787253174159432,4.723335496863951,500,372,250
+lentil,1,1,1,0.779339497344807,4.801462582601394,1000,688,500
+lentil,1,1,1,0.780212475892097,4.7550658984462775,2000,1302,1000
+```sh
 
 
 
