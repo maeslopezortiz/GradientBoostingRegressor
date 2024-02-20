@@ -30,6 +30,7 @@ When you are working in an Institute cluster or supercomputer  e.g. "euler" at t
 module load python/3.7.4
 python
 ```
+
 ## Example
 
 This example can be done using the scriot bellow, to get coefficient correlation values and mean squared error from the data base 'lentil'.
@@ -177,6 +178,7 @@ usefulmarkers = p0.shape[0]
 print(usefulmarkers)
 #2273
 ```
+
 ## Adding More Estimators? 
 
 To improve the predictions values, we are going to evaluate the modification of hyperparameters such as number of estimator and the number of markers.
@@ -210,6 +212,7 @@ for i in markers:
 csv_writer.writerows(all_results)
 resfile.close()
 ```
+
 ## Results 
 
 By now we got a csv file in GBR_results output directory in our terminal.
@@ -232,10 +235,13 @@ lentil,1,1,1,0.7787253174159432,4.723335496863951,500,372,250
 lentil,1,1,1,0.779339497344807,4.801462582601394,1000,688,500
 lentil,1,1,1,0.780212475892097,4.7550658984462775,2000,1302,1000
 ```
+
 ## R plot
 
 >Plot using the plot_estimators.R in R
 
 
 Plot of with the 20 cross-fold-validation for all traits of the 'lentil' dataset.
+
+
 ![](https://github.com/maeslopezortiz/GradientBoostingRegressor/blob/main/plots_lentil.png)
