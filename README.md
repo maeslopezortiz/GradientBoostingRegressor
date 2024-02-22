@@ -11,7 +11,7 @@ Selecting the parameters which are applied to increase the prediction accuracy.
 | ------ | ------ |
 | Fold: | 5 |
 | Cross-Validation: | 20 (Repeating the process). |
-| Average the scores: | mean sequared error (MSE) and correlation coefficient (cor). |
+| Average the scores: | mean squared error" (MSE) and correlation coefficient (cor). |
 | Testing no. estimators: | all, 2000, 1000, 500, 400, 300, 200, 100, 50. |
 | Testing no. markers: | 1000, 500, 250, 200, 150, 100, 50, 25. |
 
@@ -25,7 +25,7 @@ mkdir GBR_results #create output directoty for results
 
 ## Working in Python
 
-When you are working in an Institute cluster or supercomputer  e.g. "euler" at the ETHZ, you need to be awared that you have dowloaded the last Python version and loaded it.
+When you are working in an Institute cluster or supercomputer  e.g. "euler" at the ETHZ, you need to be aware that you have downloaded the last Python version and loaded it.
 ```sh
 module load python/3.7.4
 python
@@ -33,7 +33,7 @@ python
 
 ## Example
 
-This example can be done using the scriot bellow, to get coefficient correlation values and mean squared error from the data base 'lentil'.
+This example can be done using the script below, to get coefficient correlation values and mean squared error from the data base 'lentil'.
 You can run the Python script as:
 
 ```sh
@@ -190,7 +190,7 @@ all_results.append( result1 )
 markers = [50,100, 200, 300, 400, 500, 1000, 2000]
 ```
 
-Runing in a loop and saving results in a csv file.
+Running in a loop and saving results in a csv file.
 ```sh
 for i in markers:
     new_markers = p0[-i:]
